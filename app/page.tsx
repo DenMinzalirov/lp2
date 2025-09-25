@@ -44,13 +44,13 @@ export default function Home() {
   }, [])
 
   // Показываем iframe через 2 секунды
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowIframe(true)
-    }, 2000)
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowIframe(true)
+  //   }, 2000)
 
-    return () => clearTimeout(timer)
-  }, [])
+  //   return () => clearTimeout(timer)
+  // }, [])
 
   return (
     <div style={{ 
@@ -79,25 +79,6 @@ export default function Home() {
           transition: 'opacity 0.5s ease-in-out'
         }}
       />
-
-      {/* Iframe с оригинальным сайтом - занимает весь экран */}
-        <iframe
-          src="https://hertzbetz.io"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            border: 'none',
-            zIndex: 2,
-            opacity: showIframe ? 1 : 0,
-            transition: 'opacity 0.5s ease-in-out',
-          }}
-          title="HertzBetz Casino"
-          allow="fullscreen"
-          sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
-        />
 
       {/* Интерактив: Spin to Win по центру экрана */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
